@@ -73,7 +73,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: var(--gray-light);
+    background: var(--color-gray-light);
   }
 
   body,
