@@ -57,6 +57,8 @@ export const GlobalStyle = createGlobalStyle`
     --font-heading-36: 700 2.25rem/3rem 'Inter', sans-serif;
 
     --border-radius: 0.5rem;
+    --shadow-1: 0px 4px 16px rgba(38, 38, 38, 0.05);
+    --shadow-2: 0px 4px 20px rgba(38, 38, 38, 0.2);
   }
 
   * {

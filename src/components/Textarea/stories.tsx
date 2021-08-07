@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react'
 import { Textarea } from '.'
 
 export default {
-  title: 'Textarea',
+  title: 'Form/Textarea',
   component: Textarea
 } as Meta
 
