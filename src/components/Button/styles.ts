@@ -49,7 +49,7 @@ const buttonModifiers = {
 export const Button = styled.button<ButtonProps>`
   ${({ variant }) => css`
     font: var(--font-body-18-semibold);
-    padding: 1rem;
+    padding: var(--space-16);
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;

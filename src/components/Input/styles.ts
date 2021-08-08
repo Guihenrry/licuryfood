@@ -4,7 +4,7 @@ import { cssVar, rgba } from 'polished'
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-8);
 `
 
 export const Label = styled.label`
@@ -26,18 +26,18 @@ export const Input = styled.input<InputProps>`
   ${({ error }) => css`
     font: var(--font-body-16);
     color: var(--color-gray-dark);
-    border: 1px solid var(--color-gray);
+    border: var(--space-1) solid var(--color-gray);
     border-radius: var(--border-radius);
-    padding: 1rem;
+    padding: var(--space-16);
     transition: border 0.25s, box-shadow 0.25s;
 
     &:hover:not(:disabled) {
-      border: 1px solid var(--color-gray-dark);
+      border: var(--space-1) solid var(--color-gray-dark);
     }
 
     &:focus:not(:disabled) {
       outline: none;
-      border: 1px solid var(--color-green-dark);
+      border: var(--space-1) solid var(--color-green-dark);
       box-shadow: 0px 0px 0px 4px
         ${rgba(cssVar('--color-green-dark', '#3E9469'), 0.25)};
     }

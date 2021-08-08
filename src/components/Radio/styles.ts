@@ -2,16 +2,16 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.span`
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: var(--space-32);
+  height: var(--space-32);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 `
 
 export const Checkmark = styled.span`
-  width: 12px;
-  height: 12px;
+  width: var(--space-12);
+  height: var(--space-12);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ export const Checkmark = styled.span`
   &:after {
     content: '';
     display: block;
-    min-width: 20px;
+    min-width: var(--space-20);
     min-height: 20px;
     border-radius: 50%;
     border: 2px solid var(--color-gray);
