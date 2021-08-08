@@ -1,18 +1,16 @@
-import React from 'react'
-
 import * as S from './styles'
 
-export type ButtonProps = {
+export type ButtonIconProps = {
+  color?: 'green' | 'red'
   children: React.ReactNode
-  variant?: 'contained' | 'text'
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
-export const Button = ({
+export const ButtonIcon = ({
+  color = 'green',
   children,
-  variant = 'contained',
   onClick = () => null,
   ...props
-}: ButtonProps) => {
+}: ButtonIconProps) => {
   const addRippleElement = (event: React.MouseEvent<HTMLButtonElement>) => {
     const buttonElement = event.currentTarget
     const rippleElement = document.createElement('span')
@@ -25,7 +23,7 @@ export const Button = ({
     const mousePositionX = event.clientX
     const keyboardClick = mousePositionY === 0 && mousePositionX === 0
 
-    const scale = buttonPositionData.height * 1.5
+    const scale = buttonPositionData.height / 1.8
     const positionY = keyboardClick
       ? buttonPositionData.height / 2
       : mousePositionY - buttonPositionData.top
@@ -56,7 +54,7 @@ export const Button = ({
   }
 
   return (
-    <S.Button onClick={handleClick} variant={variant} {...props}>
+    <S.Button color={color} onClick={handleClick} {...props}>
       {children}
     </S.Button>
   )

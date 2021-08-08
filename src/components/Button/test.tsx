@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 import { Button } from '.'
 
@@ -27,5 +28,18 @@ describe('<Button />', () => {
 
     expect(button).toHaveStyleRule('background', 'transparent')
     expect(button).toHaveStyleRule('color', 'var(--color-gray-dark)')
+  })
+
+  it('should trigger the onClick method', () => {
+    const onClick = jest.fn()
+
+    render(
+      <Button variant="text" onClick={onClick}>
+        Finalizar pedido
+      </Button>
+    )
+
+    userEvent.click(screen.getByRole('button', { name: /finalizar pedido/i }))
+    expect(onClick).toHaveBeenCalled()
   })
 })
