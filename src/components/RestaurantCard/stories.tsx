@@ -6,7 +6,7 @@ export default {
   title: 'RestaurantCard',
   component: RestaurantCard,
   args: {
-    image: '/pizzaria.png',
+    image: '/storybook/pizzaria.png',
     name: 'Pizzaria Delicious',
     category: 'Pizzaria',
     deliveryPrice: 'R$ 2,00',

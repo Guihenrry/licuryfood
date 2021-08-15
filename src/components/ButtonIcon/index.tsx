@@ -19,17 +19,9 @@ export const ButtonIcon = ({
 
     const buttonPositionData = buttonElement.getBoundingClientRect()
 
-    const mousePositionY = event.clientY
-    const mousePositionX = event.clientX
-    const keyboardClick = mousePositionY === 0 && mousePositionX === 0
-
     const scale = buttonPositionData.height / 1.8
-    const positionY = keyboardClick
-      ? buttonPositionData.height / 2
-      : mousePositionY - buttonPositionData.top
-    const positionX = keyboardClick
-      ? buttonPositionData.width / 2
-      : mousePositionX - buttonPositionData.left
+    const positionY = buttonPositionData.height / 2
+    const positionX = buttonPositionData.width / 2
 
     rippleElement.style.setProperty('--position-y', `${positionY}px`)
     rippleElement.style.setProperty('--position-x', `${positionX}px`)

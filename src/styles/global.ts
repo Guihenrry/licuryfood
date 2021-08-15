@@ -62,6 +62,7 @@ export const GlobalStyle = createGlobalStyle`
     --shadow-2: 0px 4px 20px rgba(38, 38, 38, 0.2);
 
     --space-1: 1px;
+    --space-4: 0.25rem;
     --space-8: 0.5rem;
     --space-12: 0.75rem;
     --space-16: 1rem;
