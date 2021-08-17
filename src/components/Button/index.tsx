@@ -10,7 +10,7 @@ export type ButtonProps = {
 export const Button = ({
   children,
   variant = 'contained',
-  onClick = () => null,
+  onClick,
   ...props
 }: ButtonProps) => {
   const addRippleElement = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -52,7 +52,7 @@ export const Button = ({
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     addRippleElement(event)
-    onClick(event)
+    if (typeof onClick === 'function') onClick(event)
   }
 
   return (

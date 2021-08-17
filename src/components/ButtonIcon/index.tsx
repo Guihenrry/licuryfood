@@ -8,7 +8,7 @@ export type ButtonIconProps = {
 export const ButtonIcon = ({
   color = 'green',
   children,
-  onClick = () => null,
+  onClick,
   ...props
 }: ButtonIconProps) => {
   const addRippleElement = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -42,7 +42,7 @@ export const ButtonIcon = ({
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     addRippleElement(event)
-    onClick(event)
+    if (typeof onClick === 'function') onClick(event)
   }
 
   return (

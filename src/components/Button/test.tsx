@@ -32,14 +32,46 @@ describe('<Button />', () => {
 
   it('should trigger the onClick method', () => {
     const onClick = jest.fn()
-
-    render(
-      <Button variant="text" onClick={onClick}>
-        Finalizar pedido
-      </Button>
-    )
+    render(<Button onClick={onClick}>Finalizar pedido</Button>)
 
     userEvent.click(screen.getByRole('button', { name: /finalizar pedido/i }))
+    expect(onClick).toHaveBeenCalled()
+  })
+
+  it('should be accessible with tab', () => {
+    render(<Button>Finalizar pedido</Button>)
+
+    expect(document.body).toHaveFocus()
+
+    userEvent.tab()
+    expect(
+      screen.getByRole('button', { name: /finalizar pedido/i })
+    ).toHaveFocus()
+  })
+
+  it('should trigger the onClick method by pressing the enter key', () => {
+    const onClick = jest.fn()
+    render(<Button onClick={onClick}>Finalizar pedido</Button>)
+
+    const button = screen.getByRole('button', { name: /finalizar pedido/i })
+
+    userEvent.tab()
+    expect(button).toHaveFocus()
+
+    userEvent.keyboard('{enter}')
+    expect(onClick).toHaveBeenCalled()
+  })
+
+  it('should trigger the onClick method by pressing the space key', () => {
+    const onClick = jest.fn()
+    render(<Button onClick={onClick}>Finalizar pedido</Button>)
+
+    const button = screen.getByRole('button', { name: /finalizar pedido/i })
+
+    userEvent.tab()
+    expect(button).toHaveFocus()
+
+    userEvent.keyboard('{space}')
     expect(onClick).toHaveBeenCalled()
   })
 })
