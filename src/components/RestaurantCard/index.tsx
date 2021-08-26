@@ -8,17 +8,14 @@ export type RestaurantCardProps = {
   name: string
   category: string
   deliveryPrice: string
-  isOpen: boolean
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 const Component: React.ForwardRefRenderFunction<
   HTMLAnchorElement,
   RestaurantCardProps
-> = ({ image, name, category, deliveryPrice, isOpen, ...props }, ref) => {
+> = ({ image, name, category, deliveryPrice, ...props }, ref) => {
   return (
     <S.Wrapper ref={ref} {...props}>
-      <S.StatusOpen isOpen={isOpen} />
-
       <S.ImageWrapper>
         <Image
           src={image}

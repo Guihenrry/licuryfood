@@ -10,7 +10,6 @@ export default {
     name: 'Pizzaria Delicious',
     category: 'Pizzaria',
     deliveryPrice: 'R$ 2,00',
-    isOpen: true,
     href: '#'
   }
 } as Meta
