@@ -9,7 +9,7 @@ export default {
     image: '/storybook/pizzaria.png',
     name: 'Pizzaria Delicious',
     category: 'Pizzaria',
-    deliveryPrice: 'R$ 2,00',
+    deliveryPrice: 2,
     href: '#'
   }
 } as Meta

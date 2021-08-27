@@ -6,7 +6,7 @@ const props: RestaurantCardProps = {
   image: '/pizzaria.png',
   name: 'Pizzaria Delicious',
   category: 'Pizzaria',
-  deliveryPrice: 'R$ 2,00',
+  deliveryPrice: 2,
   href: '/menu/pizzaria-delicious'
 }
 

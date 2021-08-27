@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { forwardRef } from 'react'
+import { forwardRef, useMemo } from 'react'
 
 import * as S from './styles'
 
@@ -7,13 +7,22 @@ export type RestaurantCardProps = {
   image: string
   name: string
   category: string
-  deliveryPrice: string
+  deliveryPrice: number
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 const Component: React.ForwardRefRenderFunction<
   HTMLAnchorElement,
   RestaurantCardProps
 > = ({ image, name, category, deliveryPrice, ...props }, ref) => {
+  const deliveryPriceFormatted = useMemo(
+    () =>
+      new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      }).format(deliveryPrice),
+    [deliveryPrice]
+  )
+
   return (
     <S.Wrapper ref={ref} {...props}>
       <S.ImageWrapper>
@@ -29,7 +38,7 @@ const Component: React.ForwardRefRenderFunction<
       <S.Detail>
         <S.Name>{name}</S.Name>
         <S.Info>
-          {category} • Entrega {deliveryPrice}
+          {category} • Entrega {deliveryPriceFormatted}
         </S.Info>
       </S.Detail>
     </S.Wrapper>

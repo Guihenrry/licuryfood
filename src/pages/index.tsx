@@ -1,3 +1,6 @@
+import { TemplateHome } from 'components/TemplateHome'
+import { restaurants } from 'data'
+
 export default function Home() {
-  return <h1>Home</h1>
+  return <TemplateHome restaurants={restaurants} />
 }
