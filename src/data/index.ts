@@ -1,20 +1,6 @@
 import { wykLanches } from './wyk-lanches'
-
-const restaurant1 = {
-  slug: 'restaurant-1',
-  name: 'Restaurant 1',
-  image: '/storybook/pizzaria.png',
-  category: 'category-1',
-  deliveryPrice: 1
-}
-
-const restaurant2 = {
-  slug: 'restaurant-2',
-  name: 'Restaurant 2',
-  image: '/storybook/pizzaria.png',
-  category: 'category-2',
-  deliveryPrice: 2
-}
+import { restaurant1 } from './restaurant-1'
+import { restaurant2 } from './restaurant-2'
 
 export const data = {
   'wyk-lanches': wykLanches,

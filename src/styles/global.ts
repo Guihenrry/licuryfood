@@ -71,6 +71,7 @@ export const GlobalStyle = createGlobalStyle`
     --space-32: 2rem;
     --space-48: 3rem;
     --space-56: 3.5rem;
+    --space-64: 4rem;
     --space-72: 4.5rem;
   }
 

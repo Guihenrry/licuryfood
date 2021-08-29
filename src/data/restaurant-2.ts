@@ -1,9 +1,9 @@
-export const wykLanches = {
-  slug: 'wyk-lanches',
-  name: 'Wyk Lanches',
-  image: '/images/wyk-lanches.jpg',
+export const restaurant2 = {
+  slug: 'restaurant-2',
+  name: 'Restaurant 2',
+  image: '/storybook/pizzaria-avatar.png',
   backgroundImage: '/storybook/pizzaria-background.jpg',
-  category: 'Pizzaria',
+  category: 'category-2',
   deliveryPrice: 2,
   menu: [
     {
