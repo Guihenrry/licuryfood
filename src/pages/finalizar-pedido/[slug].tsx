@@ -1,18 +1,17 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 
 import { data } from 'data'
-import { Restaurant } from 'data/types'
-import { TemplateMenu } from 'components/TemplateMenu'
+import { TemplateCheckout } from 'components/TemplateCheckout'
 
-export default function Cardapio(props: Restaurant) {
-  return <TemplateMenu {...props} />
+export default function FinalizarPedido() {
+  return <TemplateCheckout />
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
   const paths = Object.keys(data).map((key) => ({ params: { slug: key } }))
 
   return {
-    paths: paths,
+    paths,
     fallback: false
   }
 }

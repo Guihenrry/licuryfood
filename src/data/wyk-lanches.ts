@@ -1,33 +1,38 @@
-export const wykLanches = {
+import { Restaurant } from './types'
+
+export const wykLanches: Restaurant = {
   slug: 'wyk-lanches',
   name: 'Wyk Lanches',
   image: '/images/wyk-lanches.jpg',
   backgroundImage: '/storybook/pizzaria-background.jpg',
   category: 'Pizzaria',
   deliveryPrice: 2,
+  phone: '5511984625995',
+  paymentMethods: ['cash', 'debit', 'credit', 'transfer', 'pix'],
   menu: [
     {
       categoryTitle: 'Pizzas',
       items: [
         {
-          id: '1',
+          id: 'pizzas-1',
           name: '2 Queijos',
           description:
             'Queijo Mussarela - Queijo Parmesão - Azeitona - Orégano',
           price: 35
         },
         {
-          id: '2',
+          id: 'pizzas-2',
           name: '4 Queijos',
           description:
             'Queijo Mussarela - Queijo Parmesão - Cheddar - Azeitona - Orégano - Catupiry',
           price: 35
         },
         {
-          id: '3',
+          id: 'pizzas-3',
           name: 'Bacon',
           description: 'Queijo Mussarela - Bacon - Cebola - Orégano',
-          price: 35
+          price: 35,
+          image: '/storybook/pizza.png'
         }
       ]
     },
@@ -35,37 +40,37 @@ export const wykLanches = {
       categoryTitle: 'Esfihas',
       items: [
         {
-          id: '1',
+          id: 'esfihas-1',
           name: 'Carne',
           price: 3
         },
         {
-          id: '2',
+          id: 'esfihas-2',
           name: 'Frango',
           price: 2.5
         },
         {
-          id: '3',
+          id: 'esfihas-3',
           name: 'Frango com catupiry',
           price: 2.5
         },
         {
-          id: '4',
+          id: 'esfihas-4',
           name: 'Calabrea',
           price: 2.5
         },
         {
-          id: '5',
+          id: 'esfihas-5',
           name: 'Calabresa',
           price: 2.5
         },
         {
-          id: '5',
+          id: 'esfihas-6',
           name: 'Calabresa com catupiry',
           price: 2.5
         },
         {
-          id: '5',
+          id: 'esfihas-7',
           name: '3 queijos',
           price: 2.5
         }

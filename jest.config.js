@@ -3,7 +3,7 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
   collectCoverageFrom: [
-    'src/**/*.ts(x)',
+    'src/**/*.ts(x)?',
     '!src/pages/**/*.tsx',
     '!src/**/stories.tsx',
     '!src/types/**/*.d.ts'

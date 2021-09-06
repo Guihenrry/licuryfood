@@ -34,10 +34,12 @@ export const ProductCard = ({
       {image && <S.Image src={image} width={72} height={72} alt={name} />}
 
       <S.Details>
-        <S.Name>{name}</S.Name>
-        {description && <S.Description>{description}</S.Description>}
+        <S.DetailsHeader>
+          <S.Name>{name}</S.Name>
+          {description && <S.Description>{description}</S.Description>}
+        </S.DetailsHeader>
 
-        <S.Footer>
+        <S.DetailsFooter>
           <S.Price>
             <S.MoneySign>R$</S.MoneySign>
             {priceFormatted}
@@ -61,7 +63,7 @@ export const ProductCard = ({
               <Plus />
             </ButtonIcon>
           </S.Actions>
-        </S.Footer>
+        </S.DetailsFooter>
       </S.Details>
     </S.Wrapper>
   )

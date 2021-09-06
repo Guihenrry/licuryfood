@@ -9,6 +9,7 @@ export const Wrapper = styled.article`
   display: flex;
   align-items: flex-start;
   gap: var(--space-12);
+  height: 100%;
 
   @media (min-width: 768px) {
     padding: var(--space-24);
@@ -22,6 +23,17 @@ export const Image = styled(NextImage)`
 
 export const Details = styled.div`
   flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-16);
+`
+
+export const DetailsHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
 `
 
 export const Name = styled.h1`
@@ -36,11 +48,9 @@ export const Name = styled.h1`
 export const Description = styled.p`
   font: var(--font-body-12);
   color: var(--color-gray);
-  margin-top: var(--space-8);
 `
 
-export const Footer = styled.div`
-  margin-top: var(--space-16);
+export const DetailsFooter = styled.div`
   display: flex;
   justify-content: space-between;
 `
