@@ -10,14 +10,14 @@ export const GlobalStyle = createGlobalStyle`
     src: local(''),
         url('/fonts/inter-v3-latin-regular.woff2') format('woff2');
   }
-  /* inter-500 - latin */
+  /* inter-600 - latin */
   @font-face {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-display: swap;
     src: local(''),
-        url('/fonts/inter-v3-latin-500.woff2') format('woff2');
+        url('/fonts/inter-v3-latin-600.woff2') format('woff2');
   }
   /* inter-700 - latin */
   @font-face {
@@ -46,11 +46,11 @@ export const GlobalStyle = createGlobalStyle`
 
     --font-body-9: 700 0.5625rem/0.5625rem 'Inter', sans-serif;
     --font-body-12: 400 0.75rem/1rem 'Inter', sans-serif;
-    --font-body-12-semibold: 500 0.75rem/1rem 'Inter', sans-serif;
+    --font-body-12-semibold: 600 0.75rem/1rem 'Inter', sans-serif;
     --font-body-16: 400 1rem/1.5rem 'Inter', sans-serif;
-    --font-body-16-semibold: 500 1rem/1.5rem 'Inter', sans-serif;
+    --font-body-16-semibold: 600 1rem/1.5rem 'Inter', sans-serif;
     --font-body-18: 400 1.125rem/1.5rem 'Inter', sans-serif;
-    --font-body-18-semibold: 500 1.125rem/1.5rem 'Inter', sans-serif;
+    --font-body-18-semibold: 600 1.125rem/1.5rem 'Inter', sans-serif;
 
     --font-heading-24: 700 1.5rem/2rem 'Inter', sans-serif;
     --font-heading-32: 700 2rem/2.6rem 'Inter', sans-serif;
