@@ -9,7 +9,7 @@ export const Wrapper = styled.section`
 export const Mask = styled.div`
   grid-area: 1/1;
   z-index: 1;
-  background: rgba(38, 38, 38, 0.24);
+  background: rgba(38, 38, 38, 0.48);
   width: 100%;
   height: 100%;
 `
