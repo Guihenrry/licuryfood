@@ -1,3 +1,7 @@
+import { ForwardedRef, forwardRef } from 'react'
+
+import * as S from './styles'
+
 type TextareaProps = {
   id: string
   label: string
@@ -5,20 +9,17 @@ type TextareaProps = {
   error?: boolean
 } & React.TextareaHTMLAttributes<HTMLTextAreaElement>
 
-import * as S from './styles'
-
-export const Textarea = ({
-  id,
-  label,
-  helperText,
-  error = false,
-  ...props
-}: TextareaProps) => {
+export const Component = (
+  { id, label, helperText, error = false, ...props }: TextareaProps,
+  ref: ForwardedRef<HTMLTextAreaElement>
+) => {
   return (
     <S.Wrapper>
       <S.Label htmlFor={id}>{label}</S.Label>
-      <S.Textarea id={id} error={error} {...props} />
+      <S.Textarea id={id} error={error} ref={ref} {...props} />
       {helperText && <S.HelperText error={error}>{helperText}</S.HelperText>}
     </S.Wrapper>
   )
 }
+
+export const Textarea = forwardRef(Component)

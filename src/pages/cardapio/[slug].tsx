@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
 import { data } from 'data'
@@ -5,7 +6,14 @@ import { Restaurant } from 'data/types'
 import { TemplateMenu } from 'components/TemplateMenu'
 
 export default function Cardapio(props: Restaurant) {
-  return <TemplateMenu {...props} />
+  return (
+    <>
+      <Head>
+        <title>Cardápio - {props.name}</title>
+      </Head>
+      <TemplateMenu {...props} />
+    </>
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = () => {

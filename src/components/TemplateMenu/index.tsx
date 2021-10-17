@@ -6,8 +6,9 @@ import { RestaurantInfo } from 'components/RestaurantInfo'
 import { ProductCard } from 'components/ProductCard'
 import { ShoppingCart } from 'components/Icons'
 import { useCart } from 'hooks/useCart'
+import { formatPrice } from 'utils/formatPrice'
 
-export type TemplateMenuProps = Restaurant
+export type TemplateMenuProps = Omit<Restaurant, 'paymentMethods' | 'phone'>
 
 import * as S from './styles'
 
@@ -26,13 +27,10 @@ export const TemplateMenu = ({
   const quantityTotal = cart.reduce((accumulator, product) => {
     return accumulator + product.quantity
   }, 0)
-  const priceTotal = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(
+  const priceTotal = formatPrice(
     cart.reduce((accumulator, product) => {
       return product.quantity * product.price + accumulator
-    }, 0)
+    }, 0) + deliveryPrice
   )
 
   const getProductQuantityById = (id: string) => {
@@ -40,11 +38,10 @@ export const TemplateMenu = ({
     return product ? product.quantity : 0
   }
 
-  const handlePlus = (product: Product) => {
+  const handlePlus = (product: Product, category: string) => {
     addToCart(slug, {
       ...product,
-      category,
-      name,
+      category: category,
       quantity: 1
     })
   }
@@ -76,7 +73,7 @@ export const TemplateMenu = ({
                   description={product.description}
                   price={product.price}
                   quantity={getProductQuantityById(product.id)}
-                  onPlus={() => handlePlus(product)}
+                  onPlus={() => handlePlus(product, menuCategory.categoryTitle)}
                   onLess={() => handleLess(product.id)}
                 />
               </S.ProductItem>

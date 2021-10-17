@@ -147,7 +147,7 @@ describe('<TemplateMenu />', () => {
     expect(
       await screen.findByRole('link', { name: /Finalizar pedido/i })
     ).toHaveAttribute('href', '/finalizar-pedido/pizzaria-do-zeca')
-    expect(await screen.findByText('R$ 110,00')).toBeInTheDocument()
+    expect(await screen.findByText('R$ 115,00')).toBeInTheDocument()
     expect(await screen.findByText('3')).toBeInTheDocument()
 
     userEvent.click(removeButtons[0])
@@ -160,6 +160,6 @@ describe('<TemplateMenu />', () => {
     expect(
       await screen.findByRole('link', { name: /Finalizar pedido/i })
     ).toHaveAttribute('href', '/finalizar-pedido/pizzaria-do-zeca')
-    expect(await screen.findByText('R$ 35,00')).toBeInTheDocument()
+    expect(await screen.findByText('R$ 40,00')).toBeInTheDocument()
   })
 })

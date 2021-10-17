@@ -19,11 +19,23 @@ type InputProps = {
 export const inputModifiers = {
   error: () => css`
     border-color: var(--color-red-dark);
+
+    &:hover:not(:disabled) {
+      border: var(--space-1) solid var(--color-red-dark);
+    }
+
+    &:focus:not(:disabled) {
+      outline: none;
+      border: var(--space-1) solid var(--color-red-dark);
+      box-shadow: 0px 0px 0px 4px
+        ${rgba(cssVar('--color-red-dark', '#D23137'), 0.25)};
+    }
   `
 }
 
 export const Input = styled.input<InputProps>`
   ${({ error }) => css`
+    width: 100%;
     font: var(--font-body-16);
     color: var(--color-gray-dark);
     border: var(--space-1) solid var(--color-gray);

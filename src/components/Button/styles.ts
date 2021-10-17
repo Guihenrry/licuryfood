@@ -3,6 +3,7 @@ import { cssVar, rgba } from 'polished'
 
 type ButtonProps = {
   variant: 'contained' | 'text'
+  fullWidth: boolean
 }
 
 const buttonModifiers = {
@@ -43,12 +44,17 @@ const buttonModifiers = {
       box-shadow: 0px 0px 0px 4px
         ${rgba(cssVar('--color-green-dark', '#3E9469'), 0.24)};
     }
+  `,
+  fullWidth: () => css`
+    width: 100%;
   `
 }
 
 export const Button = styled.button<ButtonProps>`
-  ${({ variant }) => css`
+  ${({ variant, fullWidth }) => css`
     font: var(--font-body-18-semibold);
+    text-align: center;
+    text-decoration: none;
     padding: var(--space-16);
     border: none;
     border-radius: var(--border-radius);
@@ -96,5 +102,6 @@ export const Button = styled.button<ButtonProps>`
     }
 
     ${buttonModifiers[variant]()}
+    ${fullWidth && buttonModifiers.fullWidth()}
   `}
 `

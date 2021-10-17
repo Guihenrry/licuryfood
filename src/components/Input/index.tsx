@@ -1,3 +1,5 @@
+import { ForwardedRef, forwardRef } from 'react'
+
 import * as S from './styles'
 
 type InputProps = {
@@ -7,18 +9,17 @@ type InputProps = {
   error?: boolean
 } & React.InputHTMLAttributes<HTMLInputElement>
 
-export const Input = ({
-  id,
-  label,
-  helperText,
-  error = false,
-  ...props
-}: InputProps) => {
+const Component = (
+  { id, label, helperText, error = false, ...props }: InputProps,
+  ref: ForwardedRef<HTMLInputElement>
+) => {
   return (
     <S.Wrapper>
       <S.Label htmlFor={id}>{label}</S.Label>
-      <S.Input id={id} error={error} {...props} />
+      <S.Input id={id} error={error} ref={ref} {...props} />
       {helperText && <S.HelperText error={error}>{helperText}</S.HelperText>}
     </S.Wrapper>
   )
 }
+
+export const Input = forwardRef(Component)

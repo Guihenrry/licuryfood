@@ -8,7 +8,7 @@ export const restaurant2: Restaurant = {
   category: 'category-2',
   deliveryPrice: 2,
   phone: '5511984625995',
-  paymentMethods: ['cash', 'debit', 'credit', 'transfer', 'pix'],
+  paymentMethods: ['pix', 'transfer', 'credit', 'debit', 'cash'],
   menu: [
     {
       categoryTitle: 'Pizzas',

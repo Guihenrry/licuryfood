@@ -74,4 +74,11 @@ describe('<Button />', () => {
     userEvent.keyboard('{space}')
     expect(onClick).toHaveBeenCalled()
   })
+
+  it('shoudl render button with full width', () => {
+    render(<Button fullWidth>Finalizar pedido</Button>)
+
+    const button = screen.getByRole('button', { name: /finalizar pedido/i })
+    expect(button).toHaveStyleRule('width', '100%')
+  })
 })

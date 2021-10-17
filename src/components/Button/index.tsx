@@ -1,19 +1,35 @@
-import React from 'react'
+import React, { ForwardedRef, forwardRef } from 'react'
 
 import * as S from './styles'
+
+type ButtonTypes =
+  | React.AnchorHTMLAttributes<HTMLAnchorElement>
+  | React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonProps = {
   children: React.ReactNode
   variant?: 'contained' | 'text'
-} & React.ButtonHTMLAttributes<HTMLButtonElement>
+  fullWidth?: boolean
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => void
+  focus?: (options?: FocusOptions) => void
+  as?: React.ElementType
+} & ButtonTypes
 
-export const Button = ({
-  children,
-  variant = 'contained',
-  onClick,
-  ...props
-}: ButtonProps) => {
-  const addRippleElement = (event: React.MouseEvent<HTMLButtonElement>) => {
+export const Component = (
+  {
+    children,
+    variant = 'contained',
+    onClick,
+    fullWidth = false,
+    ...props
+  }: ButtonProps,
+  ref: ForwardedRef<HTMLButtonElement | HTMLAnchorElement>
+) => {
+  const addRippleElement = (
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
     const buttonElement = event.currentTarget
     const rippleElement = document.createElement('span')
     rippleElement.classList.add('ripple')
@@ -50,14 +66,24 @@ export const Button = ({
     rippleElement.addEventListener('transitionend', clearEffect)
   }
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
     addRippleElement(event)
     if (typeof onClick === 'function') onClick(event)
   }
 
   return (
-    <S.Button onClick={handleClick} variant={variant} {...props}>
+    <S.Button
+      onClick={handleClick}
+      variant={variant}
+      fullWidth={fullWidth}
+      ref={ref}
+      {...props}
+    >
       {children}
     </S.Button>
   )
 }
+
+export const Button = forwardRef(Component)
