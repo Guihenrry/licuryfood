@@ -304,7 +304,7 @@ export const TemplateCheckout = ({
 
           <S.ReceiptMobileWrapper>
             <Receipt
-              total="R$ 86,00"
+              total={priceTotal}
               contents={[
                 {
                   itens: [
