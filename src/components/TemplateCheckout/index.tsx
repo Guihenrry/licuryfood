@@ -104,7 +104,7 @@ export const TemplateCheckout = ({
   const priceTotal = formatPrice(
     cart.reduce((accumulator, product) => {
       return product.quantity * product.price + accumulator
-    }, 0) + deliveryPrice
+    }, 0) + (watch('withdrawal') ? 0 : deliveryPrice)
   )
 
   useEffect(() => {
@@ -139,6 +139,10 @@ export const TemplateCheckout = ({
       (product) => `${product.name} - ${product.value}`
     )
 
+    if (!data.withdrawal) {
+      productsItens.push(`Taxa de entrega - ${deliveryPriceFormatted}`)
+    }
+
     const message = generateWhatsappMessage({
       deliveryInformation: {
         name: data.name,
@@ -155,10 +159,7 @@ export const TemplateCheckout = ({
       },
       orderInformation: {
         total: priceTotal,
-        orderItems: [
-          ...productsItens,
-          `Taxa de entrega - ${deliveryPriceFormatted}`
-        ]
+        orderItems: [...productsItens]
       }
     })
 
@@ -309,7 +310,14 @@ export const TemplateCheckout = ({
                 {
                   itens: [
                     ...products,
-                    { name: 'Taxa de entrega', value: deliveryPriceFormatted }
+                    ...(watch('withdrawal')
+                      ? []
+                      : [
+                          {
+                            name: 'Taxa de entrega',
+                            value: deliveryPriceFormatted
+                          }
+                        ])
                   ]
                 }
               ]}
@@ -329,7 +337,15 @@ export const TemplateCheckout = ({
               {
                 itens: [
                   ...products,
-                  { name: 'Taxa de entrega', value: deliveryPriceFormatted }
+
+                  ...(watch('withdrawal')
+                    ? []
+                    : [
+                        {
+                          name: 'Taxa de entrega',
+                          value: deliveryPriceFormatted
+                        }
+                      ])
                 ]
               }
             ]}

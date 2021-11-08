@@ -84,10 +84,14 @@ export const TemplateSuccess = () => {
               title: 'Informações do pedido',
               itens: [
                 ...lastOrder.products,
-                {
-                  name: 'Taxa de entrega',
-                  value: lastOrder.deliveryPriceFormatted
-                }
+                ...(lastOrder.withdrawal
+                  ? []
+                  : [
+                      {
+                        name: 'Taxa de entrega',
+                        value: lastOrder.deliveryPriceFormatted
+                      }
+                    ])
               ]
             }
           ]}
