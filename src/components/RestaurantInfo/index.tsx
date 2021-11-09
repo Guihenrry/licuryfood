@@ -63,7 +63,8 @@ export const RestaurantInfo = ({
           <S.Detail>
             <S.Name>{name}</S.Name>
             <S.Text>
-              {category} • Entrega {deliveryPriceFormatted}
+              {category}
+              {deliveryPrice > 0 && ` • Entrega ${deliveryPriceFormatted}`}
             </S.Text>
           </S.Detail>
         </S.Info>

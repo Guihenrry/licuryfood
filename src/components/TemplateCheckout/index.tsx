@@ -30,6 +30,7 @@ type PaymentMethod = 'cash' | 'debit' | 'credit' | 'transfer' | 'pix'
 
 export type TemplateCheckoutProps = {
   slug: string
+  acceptDelivery: boolean
   deliveryPrice: number
   paymentMethods: PaymentMethod[]
   phone: string
@@ -72,6 +73,7 @@ const paymentMethodConfig = {
 
 export const TemplateCheckout = ({
   slug,
+  acceptDelivery,
   deliveryPrice,
   paymentMethods,
   phone
@@ -87,7 +89,10 @@ export const TemplateCheckout = ({
     setValue,
     formState: { errors }
   } = useForm<FormData>({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(schema),
+    defaultValues: {
+      withdrawal: !acceptDelivery
+    }
   })
   const [whatsappDialogProps, setWhatsappDialogProps] = useState({
     isOpen: false,
@@ -112,7 +117,6 @@ export const TemplateCheckout = ({
 
     if (formData) {
       setValue('name', formData.name)
-      setValue('withdrawal', formData.withdrawal)
       setValue('address', formData.address)
       setValue('number', formData.number)
       setValue('city', formData.city)
@@ -211,11 +215,14 @@ export const TemplateCheckout = ({
               error={!!errors.name?.message}
               {...register('name')}
             />
-            <CheckboxWithLabel
-              optionLeft="Entrega"
-              optionRight="Retirada"
-              {...register('withdrawal')}
-            />
+
+            {acceptDelivery && (
+              <CheckboxWithLabel
+                optionLeft="Entrega"
+                optionRight="Retirada"
+                {...register('withdrawal')}
+              />
+            )}
 
             <S.Address hidden={watch('withdrawal')}>
               <Input

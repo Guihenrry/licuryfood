@@ -38,7 +38,8 @@ const Component: React.ForwardRefRenderFunction<
       <S.Detail>
         <S.Name>{name}</S.Name>
         <S.Info>
-          {category} • Entrega {deliveryPriceFormatted}
+          {category}
+          {deliveryPrice > 0 && ` • Entrega ${deliveryPriceFormatted}`}
         </S.Info>
       </S.Detail>
     </S.Wrapper>

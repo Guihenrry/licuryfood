@@ -19,6 +19,7 @@ export type Restaurant = {
   image: string
   backgroundImage: string
   category: string
+  acceptDelivery: boolean
   deliveryPrice: number
   phone: string
   paymentMethods: PaymentMethod[]

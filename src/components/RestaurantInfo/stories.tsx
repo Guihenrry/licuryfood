@@ -6,7 +6,7 @@ export default {
   title: 'RestaurantInfo',
   component: RestaurantInfo,
   args: {
-    backgroundImage: '/storybook/pizzaria-background.jpg',
+    backgroundImage: '/images/pizzaria-background.jpg',
     image: '/storybook/pizzaria-avatar.png',
     name: 'Pizzaria Delicious',
     category: 'Pizzaria',

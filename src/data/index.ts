@@ -1,13 +1,13 @@
 import { RestaurantsObject } from './types'
 
 import { wykLanches } from './wyk-lanches'
-import { restaurant1 } from './restaurant-1'
-import { restaurant2 } from './restaurant-2'
+import { lailaEmpadas } from './laila-empadas'
+import { queSejaDoce } from './que-seja-doce'
 
 export const data = {
   'wyk-lanches': wykLanches,
-  'restaurant-1': restaurant1,
-  'restaurant-2': restaurant2
+  'laila-empadas': lailaEmpadas,
+  'que-seja-doce': queSejaDoce
 } as RestaurantsObject
 
 export const restaurants = Object.values(data)
