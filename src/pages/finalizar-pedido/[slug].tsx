@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 import { data } from 'data'
@@ -8,9 +8,33 @@ import { TemplateCheckout } from 'components/TemplateCheckout'
 export default function FinalizarPedido(props: Restaurant) {
   return (
     <>
-      <Head>
-        <title>Finalizar pedido - {props.name}</title>
-      </Head>
+      <NextSeo
+        title={`Finalizar pedido - ${props.name}`}
+        description="Licuryfood - a cidade dos sabores"
+        canonical={`https://licuryfood.vercel.app/finalizar-pedido/${props.slug}`}
+        openGraph={{
+          url: `https://licuryfood.vercel.app/finalizar-pedido/${props.slug}`,
+          title: `Finalizar pedido - ${props.name}`,
+          description: 'Licuryfood - a cidade dos sabores',
+          site_name: 'Licuryfood',
+          images: [
+            {
+              url: 'https://licuryfood.vercel.app/og-image-01.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Licuryfood',
+              type: 'image/jpeg'
+            },
+            {
+              url: 'https://licuryfood.vercel.app/og-image-02.jpg',
+              width: 900,
+              height: 800,
+              alt: 'Licuryfood',
+              type: 'image/jpeg'
+            }
+          ]
+        }}
+      />
       <TemplateCheckout {...props} />
     </>
   )

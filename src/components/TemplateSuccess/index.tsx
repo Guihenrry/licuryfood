@@ -88,7 +88,7 @@ export const TemplateSuccess = () => {
                   ? []
                   : [
                       {
-                        name: 'Taxa de entrega',
+                        name: 'Taxa minima de entrega*',
                         value: lastOrder.deliveryPriceFormatted
                       }
                     ])

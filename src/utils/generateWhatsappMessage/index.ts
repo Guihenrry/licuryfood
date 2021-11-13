@@ -53,7 +53,11 @@ export const generateWhatsappMessage = ({
       : ``
   const paymentText = `${paymentMethod}${moneyChange}`
 
-  return `*Informações da entrega*
+  return `Licuryfood
+
+- - - - - - - -
+
+*Informações da entrega*
 
 ${addressText}
 

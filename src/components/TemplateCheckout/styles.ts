@@ -147,6 +147,12 @@ export const ReceiptMobileWrapper = styled.div`
   }
 `
 
+export const ReceiptMobileInfo = styled.p`
+  font: var(--font-body-12);
+  color: var(--color-gray);
+  margin-top: 32px;
+`
+
 export const SubmitButton = styled(Button)`
   width: 100%;
 `
@@ -161,4 +167,10 @@ export const ReceiptWrapper = styled.div`
     top: var(--space-32);
     height: 100vh;
   }
+`
+
+export const ReceiptInfo = styled.p`
+  font: var(--font-body-12);
+  color: var(--color-gray);
+  margin-top: 32px;
 `

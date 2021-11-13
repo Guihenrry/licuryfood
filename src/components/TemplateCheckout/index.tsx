@@ -321,7 +321,7 @@ export const TemplateCheckout = ({
                       ? []
                       : [
                           {
-                            name: 'Taxa de entrega',
+                            name: 'Taxa minima de entrega*',
                             value: deliveryPriceFormatted
                           }
                         ])
@@ -329,6 +329,12 @@ export const TemplateCheckout = ({
                 }
               ]}
             />
+
+            {!watch('withdrawal') && (
+              <S.ReceiptMobileInfo>
+                * A taxa de entrega pode variar de acordo com a localidade.
+              </S.ReceiptMobileInfo>
+            )}
           </S.ReceiptMobileWrapper>
 
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
@@ -349,7 +355,7 @@ export const TemplateCheckout = ({
                     ? []
                     : [
                         {
-                          name: 'Taxa de entrega',
+                          name: 'Taxa minima de entrega*',
                           value: deliveryPriceFormatted
                         }
                       ])
@@ -357,6 +363,12 @@ export const TemplateCheckout = ({
               }
             ]}
           />
+
+          {!watch('withdrawal') && (
+            <S.ReceiptInfo>
+              * A taxa de entrega pode variar de acordo com a localidade.
+            </S.ReceiptInfo>
+          )}
         </S.ReceiptWrapper>
       </S.Wrapper>
     </>

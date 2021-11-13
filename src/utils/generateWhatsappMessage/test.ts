@@ -28,7 +28,11 @@ describe('generateWhatsappMessage()', () => {
     })
 
     expect(message).toStrictEqual(
-      `*Informações da entrega*
+      `Licuryfood
+
+- - - - - - - -
+
+*Informações da entrega*
 
 Nome: Zé da Silva
 Retirar pedido: Não
@@ -82,7 +86,11 @@ Taxa de entrega - R$ 2,00
     })
 
     expect(message).toStrictEqual(
-      `*Informações da entrega*
+      `Licuryfood
+
+- - - - - - - -
+
+*Informações da entrega*
 
 Nome: Zé da Silva
 Retirar pedido: Sim
