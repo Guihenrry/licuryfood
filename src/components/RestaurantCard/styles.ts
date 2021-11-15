@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.a`
   position: relative;
@@ -63,4 +63,20 @@ export const Name = styled.h2`
 export const Info = styled.p`
   font: var(--font-body-12);
   color: var(--color-gray);
+`
+
+type StatusProps = {
+  isOpen: boolean
+}
+
+export const Status = styled.div<StatusProps>`
+  ${({ isOpen }) => css`
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: ${isOpen ? 'var(--color-green)' : 'var(--color-red)'};
+  `}
 `

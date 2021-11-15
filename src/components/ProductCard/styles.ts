@@ -2,6 +2,7 @@ import NextImage from 'next/image'
 import styled from 'styled-components'
 
 export const Wrapper = styled.article`
+  position: relative;
   background: var(--color-white);
   padding: var(--space-16);
   border-radius: var(--border-radius);

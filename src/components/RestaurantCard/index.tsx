@@ -25,6 +25,8 @@ const Component: React.ForwardRefRenderFunction<
 
   return (
     <S.Wrapper ref={ref} {...props}>
+      <S.Status isOpen={true} />
+
       <S.ImageWrapper>
         <Image
           src={image}

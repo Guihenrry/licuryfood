@@ -321,7 +321,7 @@ export const TemplateCheckout = ({
                       ? []
                       : [
                           {
-                            name: 'Taxa minima de entrega*',
+                            name: 'Taxa mínima de entrega*',
                             value: deliveryPriceFormatted
                           }
                         ])
@@ -355,7 +355,7 @@ export const TemplateCheckout = ({
                     ? []
                     : [
                         {
-                          name: 'Taxa minima de entrega*',
+                          name: 'Taxa mínima de entrega*',
                           value: deliveryPriceFormatted
                         }
                       ])

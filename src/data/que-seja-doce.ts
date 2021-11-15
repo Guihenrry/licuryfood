@@ -21,7 +21,7 @@ export const queSejaDoce: Restaurant = {
         },
         {
           id: 'chantininho-2',
-          name: 'Massa tradicional - Media',
+          name: 'Massa tradicional - Média',
           price: 90
         },
         {
@@ -36,7 +36,7 @@ export const queSejaDoce: Restaurant = {
         },
         {
           id: 'chantininho-5',
-          name: 'Massa de cacau - Media',
+          name: 'Massa de cacau - Média',
           price: 100
         },
         {
