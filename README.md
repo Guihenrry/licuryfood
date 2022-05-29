@@ -16,6 +16,7 @@
   <img alt="License" src="https://img.shields.io/badge/licence-MIT-%234EA97F">
 </p>
 
+> [Visualizar live demo](https://licuryfood.vercel.app/)
 > [Visualizar layout no Figma](https://www.figma.com/file/aVwp3b0SrxOFrqqlkrQM6n/Licuryfood?node-id=171%3A477)
 
 ## Funcionalidades
@@ -38,7 +39,7 @@ $ yarn
 $ yarn dev
 ```
 
-## :memo: Licença
+## Licença
 Este projeto está sobre a [licença MIT](https://github.com/Guihenrry/licuryfood/blob/master/LICENSE).
 
 ---
