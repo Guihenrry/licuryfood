@@ -17,6 +17,7 @@
 </p>
 
 > [Visualizar live demo](https://licuryfood.vercel.app/)
+
 > [Visualizar layout no Figma](https://www.figma.com/file/aVwp3b0SrxOFrqqlkrQM6n/Licuryfood?node-id=171%3A477)
 
 ## Funcionalidades
