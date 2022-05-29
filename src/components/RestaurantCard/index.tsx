@@ -25,8 +25,6 @@ const Component: React.ForwardRefRenderFunction<
 
   return (
     <S.Wrapper ref={ref} {...props}>
-      <S.Status isOpen={true} />
-
       <S.ImageWrapper>
         <Image
           src={image}
@@ -41,7 +39,9 @@ const Component: React.ForwardRefRenderFunction<
         <S.Name>{name}</S.Name>
         <S.Info>
           {category}
-          {deliveryPrice > 0 && ` • Entrega ${deliveryPriceFormatted}`}
+          {deliveryPrice > 0
+            ? ` • Entrega ${deliveryPriceFormatted}`
+            : ' • Entrega grátis'}
         </S.Info>
       </S.Detail>
     </S.Wrapper>

@@ -34,4 +34,10 @@ describe('<RestaurantInfo />', () => {
     ).toBeInTheDocument()
     expect(screen.getByText('Pizzaria • Entrega R$ 2,00')).toBeInTheDocument()
   })
+
+  it('shoudl show "Entrega grátis" text if delivery price is 0', () => {
+    render(<RestaurantInfo {...props} deliveryPrice={0} />)
+
+    expect(screen.getByText('Pizzaria • Entrega grátis')).toBeInTheDocument()
+  })
 })
